@@ -1,0 +1,36 @@
+@import '../../../sass/variables';
+
+@font-face {
+	font-family: 'Special';
+	src: url('../../fonts/BOSQUE.otf');
+}
+
+.header {
+	background: url('https://res.cloudinary.com/snackmanproductions/image/upload/v1587011807/lawoffice/rothenberg-law_anurmn.png');
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
+	justify-items: center;
+	align-items: center;
+	& .text_box {
+		display: flex;
+		flex-direction: column;
+		& h1 {
+			font-family: 'Special';
+			color: $brand-accent;
+			font-weight: 100;
+			font-size: 7rem;
+		}
+		& h3 {
+			color: $brand-alt;
+			font-family: 'Cormorant Garamond';
+			font-weight: 200;
+			font-size: 3rem;
+			margin: 0;
+		}
+	}
+}

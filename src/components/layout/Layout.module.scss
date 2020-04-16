@@ -1,0 +1,8 @@
+main {
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	& .main_container {
+		max-width: 2000px;
+	}
+}
