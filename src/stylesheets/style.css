@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 html,
 body {
   padding: 0;
   margin: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  overflow-x: hidden; }
 
 p {
   font-size: 16px; }
