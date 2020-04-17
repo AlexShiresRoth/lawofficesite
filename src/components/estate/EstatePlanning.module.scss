@@ -1,0 +1,36 @@
+@import '../../../sass/variables';
+
+@font-face {
+	font-family: 'Special';
+	src: url('../../fonts/BOSQUE.otf');
+}
+
+.section {
+	display: flex;
+	flex-direction: column;
+	max-width: 1500px;
+	width: 1500px;
+	height: 100%;
+	& .heading {
+		margin-top: 8rem;
+		& h2 {
+			font-family: 'Special', sans-serif, serif;
+			font-weight: 100;
+			font-size: 4.5rem;
+			color: $brand-main;
+		}
+	}
+	& .text_content {
+		& h3 {
+			font-family: 'Special', sans-serif, serif;
+			font-size: 2rem;
+			color: $brand-main;
+			font-weight: 100;
+		}
+		& p {
+			font-size: 1.2rem;
+			margin: 1rem 0;
+			max-width: 50vw;
+		}
+	}
+}
