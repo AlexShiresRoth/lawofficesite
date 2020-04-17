@@ -1,15 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Layout from '../layout/Layout';
+import Nav from '../nav/Nav';
 import Header from '../landing/Header';
 const Home = (props: any) => {
 	return (
 		<Layout>
+			<Nav />
 			<Header />
 		</Layout>
 	);
 };
-
-Home.propTypes = {};
 
 export default Home;

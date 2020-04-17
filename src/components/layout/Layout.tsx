@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import layoutStyle from './Layout.module.scss';
 
 interface LayoutProps {
@@ -13,7 +12,5 @@ const Layout = ({ children }: LayoutProps) => {
 		</main>
 	);
 };
-
-Layout.propTypes = {};
 
 export default Layout;

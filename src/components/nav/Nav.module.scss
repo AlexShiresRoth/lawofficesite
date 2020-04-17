@@ -1,0 +1,236 @@
+@import '../../../sass/variables';
+.navigation {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: center;
+	z-index: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	background: $brand-main;
+	& button {
+		font-family: 'Montserrat';
+		font-size: 1.4rem;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	& .nav_container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		width: 1500px;
+		background: $brand-main;
+		& .nav_left {
+			display: flex;
+			position: relative;
+			z-index: 2;
+			& button {
+				background: $brand-accent;
+				padding: 2rem;
+				color: $brand-main;
+				border: 1px solid $brand-accent;
+				font-weight: 700;
+			}
+		}
+		& .nav_right {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(200px, 200px));
+			justify-items: center;
+			align-items: center;
+			position: relative;
+			& .nav_col:nth-child(1) {
+				&:hover {
+					& span:nth-child(1) {
+						width: 2000px;
+						left: -50vw;
+						height: 100vh;
+						background: $brand-secondary;
+						& .services {
+							visibility: visible;
+							height: 100%;
+							max-height: 100vh;
+							opacity: 1;
+							display: grid;
+							grid-template-columns: repeat(2, 1fr);
+							grid-template-rows: repeat(3, 1fr);
+							justify-items: center;
+							align-items: center;
+							margin-top: 5rem;
+							& .col {
+								padding: 2rem;
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+								justify-content: center;
+								background: darken($brand-secondary, 5%);
+								box-shadow: 0 5px 5px darken($brand-secondary, 5%);
+							}
+							& .col:nth-child(1) {
+								grid-column-start: 1;
+								grid-column-end: 3;
+							}
+							& .col:last-child {
+								grid-column-start: 1;
+								grid-column-end: 3;
+							}
+							& button {
+								&:hover {
+									cursor: pointer;
+								}
+							}
+						}
+					}
+				}
+				& span:nth-child(1) {
+					display: block;
+					background: $brand-secondary-fade;
+					height: 400px;
+					width: 200px;
+					position: absolute;
+					z-index: 1;
+					top: 0;
+					left: 0%;
+					transition: all 1.5s ease;
+					transform: translate(0, 0);
+					animation: slideDown 1.5s linear forwards;
+
+					& .services {
+						visibility: hidden;
+						height: 100%;
+						max-height: 0;
+						transition: all 1s ease;
+						display: grid;
+						grid-template-columns: repeat(2, 1fr);
+						grid-template-rows: repeat(3, 1fr);
+						justify-items: center;
+						align-items: center;
+						opacity: 0;
+
+						& .col {
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+							& svg {
+								max-width: 5rem;
+								fill: $brand-secondary;
+							}
+						}
+						& .col:nth-child(1) {
+							grid-column-start: 1;
+							grid-column-end: 3;
+						}
+						& .col:last-child {
+							grid-column-start: 1;
+							grid-column-end: 3;
+						}
+					}
+				}
+				& button {
+					background: transparent;
+					color: $brand-accent;
+					border: 1px solid transparent;
+					font-weight: 300;
+					padding: 1rem;
+					position: relative;
+					z-index: 1;
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+			& .nav_col:nth-child(2) {
+				& span:nth-child(1) {
+					display: block;
+					background: $brand-alt-fade;
+					height: 400px;
+					width: 200px;
+					position: absolute;
+					z-index: 0;
+					top: 150px;
+					left: 100px;
+					animation: slideUp 1.5s linear forwards;
+				}
+				& span:nth-child(2) {
+					display: block;
+					background: lighten($brand-main-fade, 5%);
+					height: 250px;
+					width: 200px;
+					position: absolute;
+					z-index: 0;
+					top: 0%;
+					left: 200px;
+					transition: all 1.5s ease;
+					animation: slideDown 1.8s linear forwards;
+				}
+				& button {
+					background: transparent;
+					color: $brand-accent;
+					border: 1px solid transparent;
+					font-weight: 300;
+					padding: 1rem;
+					position: relative;
+					z-index: 1;
+				}
+			}
+			& .nav_col:nth-child(3) {
+				& span:nth-child(1) {
+					display: block;
+					background: $brand-secondary-fade;
+					height: 150px;
+					width: 200px;
+					position: absolute;
+					z-index: 0;
+					top: 0%;
+					left: 400px;
+					transition: all 1.5s ease;
+					animation: slideDown 2s linear forwards;
+				}
+				& span:nth-child(2) {
+					display: block;
+					background: $brand-accent-fade;
+					height: 300px;
+					width: 10px;
+					position: absolute;
+					z-index: 0;
+					top: 300px;
+					left: 460px;
+				}
+				& button {
+					background: transparent;
+					color: $brand-accent;
+					border: 1px solid transparent;
+					font-weight: 300;
+					padding: 1rem;
+					position: relative;
+					z-index: 1;
+				}
+			}
+		}
+	}
+}
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(-80vh);
+	}
+	90% {
+		transform: translateY(2vh);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+@keyframes slideUp {
+	0% {
+		transform: translateY(80vh);
+	}
+	90% {
+		transform: translateY(-2vh);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
