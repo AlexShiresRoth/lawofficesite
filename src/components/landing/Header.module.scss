@@ -120,6 +120,12 @@
 }
 @media screen and (max-width: 600px) {
 	.header {
+			& .overlay {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(135deg, $brand-main 70%, #00204a67 0%);
+	}
 		& .container {
 			width: 90vw;
 			& .text_box {

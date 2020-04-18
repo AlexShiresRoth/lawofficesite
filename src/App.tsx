@@ -5,7 +5,7 @@ import EstatePlanningPage from './components/pages/EstatePlanningPage';
 import EstateAdministrationPage from './components/pages/EstateAdministrationPage';
 import EstateAndTrustPage from './components/pages/EstateTrustPage';
 import BankruptcyPage from './components/pages/BankruptcyPage';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
 	return (
