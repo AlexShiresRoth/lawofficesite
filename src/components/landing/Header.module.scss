@@ -17,13 +17,7 @@
 	align-items: center;
 	position: relative;
 	overflow-y: hidden;
-	& button {
-		font-family: 'Montserrat';
-		font-size: 1.4rem;
-		&:hover {
-			cursor: pointer;
-		}
-	}
+
 	& .overlay {
 		position: absolute;
 		height: 100%;
@@ -59,6 +53,47 @@
 				font-weight: 200;
 				font-size: 2rem;
 				margin: 0;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1500px) {
+	.header {
+		& .container {
+			width: 80vw;
+			& .text_box {
+				& h1 {
+					font-size: 5rem;
+					margin: 0;
+				}
+				& h3 {
+					color: $brand-alt-fade;
+					font-family: 'Montserrat';
+					font-weight: 200;
+					font-size: 2rem;
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 1200px) {
+	.header {
+		& .container {
+			width: 80vw;
+			& .text_box {
+				& h1 {
+					font-size: 4rem;
+					margin: 0;
+				}
+				& h3 {
+					color: $brand-alt-fade;
+					font-family: 'Montserrat';
+					font-weight: 200;
+					font-size: 1.6rem;
+					margin: 0;
+				}
 			}
 		}
 	}

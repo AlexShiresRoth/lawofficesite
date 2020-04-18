@@ -12,7 +12,7 @@
 	transition: all 1s ease;
 	& button {
 		font-family: 'Montserrat';
-		font-size: 1.1rem;
+		font-size: 1rem;
 		&:hover {
 			cursor: pointer;
 		}
@@ -71,7 +71,7 @@
 					}
 				}
 				& .span_expanded {
-					width: 2000px;
+					width: 100vw;
 					left: -50vw;
 					height: 100vh;
 					top: 0;
