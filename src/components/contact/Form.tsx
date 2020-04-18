@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import formStyle from './Form.module.scss';
 
 const Form = () => {
@@ -70,13 +70,16 @@ const Form = () => {
 					</div>
 				</form>
 				<div className={formStyle.business}>
-					<h4>HOURS:</h4>
-					<p>Mon - Fri: 9:00am - 5:30pm</p>
-					<p>Weekends: By appointment</p>
-
-					<h4>PHONE:</h4>
-					<p>Bohemia: 631-363-8749</p>
-					<p>Brooklyn: 646-633-4555</p>
+					<div>
+						<h4>HOURS:</h4>
+						<p>Mon - Fri: 9:00am - 5:30pm</p>
+						<p>Weekends: By appointment</p>
+					</div>
+					<div>
+						<h4>PHONE:</h4>
+						<p>Bohemia: 631-363-8749</p>
+						<p>Brooklyn: 646-633-4555</p>
+					</div>
 				</div>
 			</div>
 		</section>

@@ -98,6 +98,49 @@
 		}
 	}
 }
+@media screen and (max-width: 900px) {
+	.header {
+		& .container {
+			width: 80vw;
+			& .text_box {
+				& h1 {
+					font-size: 3.2rem;
+					margin: 0;
+				}
+				& h3 {
+					color: $brand-alt-fade;
+					font-family: 'Montserrat';
+					font-weight: 200;
+					font-size: 1.2rem;
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 600px) {
+	.header {
+		& .container {
+			width: 90vw;
+			& .text_box {
+				grid-column-start: 1;
+				grid-column-end: 3;
+				padding: 1rem;
+				& h1 {
+					font-size: 3rem;
+					margin: 0;
+				}
+				& h3 {
+					color: $brand-alt-fade;
+					font-family: 'Montserrat';
+					font-weight: 200;
+					font-size: 1.4rem;
+					margin: 0;
+				}
+			}
+		}
+	}
+}
 
 @keyframes fadeIn {
 	0% {

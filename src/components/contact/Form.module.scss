@@ -82,3 +82,77 @@
 		}
 	}
 }
+@media screen and (max-width: 1200px) {
+	.section {
+		width: 100%;
+		& .heading {
+			width: 80vw;
+			& h2 {
+				font-family: 'Special';
+				font-size: 3rem;
+				color: $brand-main;
+				font-weight: 100;
+			}
+		}
+		& .grid {
+			max-width: 1500px;
+			width: 80vw;
+		}
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.section {
+		& .heading {
+			width: 90vw;
+			& h2 {
+				padding: 1rem;
+				font-family: 'Special';
+				font-size: 3.2rem;
+				color: $brand-main;
+				font-weight: 100;
+			}
+		}
+		& .grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(2, auto);
+			gap: 5rem;
+			width: 90vw;
+			& form {
+				display: flex;
+				flex-direction: column;
+				& .input_row {
+					& label {
+						font-size: 1rem;
+						color: $brand-main;
+						font-family: 'Montserrat';
+						margin: 0.2rem 0;
+					}
+					& input,
+					select,
+					textarea {
+						padding: 0.5rem 0.2rem;
+						border: 1px solid #eee;
+						font-size: 16px;
+						width: 100%;
+					}
+				}
+				& .input_row:last-child {
+					grid-column-start: 1;
+					grid-column-end: 3;
+				}
+			}
+			& .business {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				& h4 {
+					color: $brand-main;
+					font-weight: 700;
+					font-size: 2rem;
+					font-family: 'Special';
+				}
+			}
+		}
+	}
+}

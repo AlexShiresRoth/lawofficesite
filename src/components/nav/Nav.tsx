@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import navStyle from './Nav.module.scss';
+import MobileNav from './MobileNav';
 import { NavLink, withRouter } from 'react-router-dom';
 import { estateSvg, trust, challenges, bankruptcy } from './navSvgs';
 
 const Nav = (history: any) => {
-	const navRef = useRef<HTMLDivElement>(null);
-
 	const servicesArr = [
 		{ title: 'Estate Planning', icon: estateSvg, path: '/estateplanning' },
 		{ title: 'Estate & Trust Administration', icon: trust, path: '/estateadmin' },
@@ -21,7 +20,7 @@ const Nav = (history: any) => {
 
 	const [navBg, setNavBg] = useState(false);
 
-	const { services, contact, about } = expanded;
+	const { services } = expanded;
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -36,10 +35,16 @@ const Nav = (history: any) => {
 
 	return (
 		<nav className={navStyle.navigation} style={navBg ? { background: `#00204a` } : { background: '' }}>
+			<MobileNav services={servicesArr} />
 			<div className={navStyle.nav_container}>
 				<div className={navStyle.nav_left}>
 					<NavLink to="/">
-						<button>Home</button>
+						<button>
+							<img
+								src={`https://res.cloudinary.com/snackmanproductions/image/upload/v1587183467/lawoffice/lawofficelogo_fdaxgi.png`}
+								alt="logo"
+							/>
+						</button>
 					</NavLink>
 				</div>
 				<div className={navStyle.nav_right}>
