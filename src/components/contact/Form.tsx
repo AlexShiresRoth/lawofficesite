@@ -50,6 +50,7 @@ const Form = () => {
 						<label>Message</label>
 						<textarea
 							placeholder="Please include a brief message."
+							name="message"
 							value={message}
 							onChange={(e) => onChange(e)}
 						></textarea>
