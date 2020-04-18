@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import navStyle from './Nav.module.scss';
 import { NavLink, withRouter } from 'react-router-dom';
 import { estateSvg, trust, challenges, bankruptcy } from './navSvgs';
 
 const Nav = (history: any) => {
+	const navRef = useRef<HTMLDivElement>(null);
+
 	const servicesArr = [
 		{ title: 'Estate Planning', icon: estateSvg, path: '/estateplanning' },
 		{ title: 'Estate & Trust Administration', icon: trust, path: '/estateadmin' },
@@ -17,10 +19,23 @@ const Nav = (history: any) => {
 		about: false,
 	});
 
+	const [navBg, setNavBg] = useState(false);
+
 	const { services, contact, about } = expanded;
 
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 100) {
+				setNavBg(true);
+			} else setNavBg(false);
+		};
+		window.addEventListener('scroll', handleScroll);
+
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
+
 	return (
-		<nav className={navStyle.navigation}>
+		<nav className={navStyle.navigation} style={navBg ? { background: `#00204a` } : { background: '' }}>
 			<div className={navStyle.nav_container}>
 				<div className={navStyle.nav_left}>
 					<NavLink to="/">
@@ -37,6 +52,7 @@ const Nav = (history: any) => {
 									? navStyle.span_hidden
 									: navStyle.span_none
 							}
+							style={navBg && !services ? { maxHeight: '100%' } : { maxHeight: '100vh' }}
 						>
 							<div className={navStyle.services}>
 								{servicesArr.map((service, i) => {
@@ -58,7 +74,8 @@ const Nav = (history: any) => {
 					<div className={navStyle.nav_col}>
 						{history.location.pathname === '/' ? (
 							<>
-								<span></span> <span></span>
+								<span style={navBg ? { maxHeight: '0%' } : { maxHeight: '100vh' }}></span>{' '}
+								<span style={navBg ? { maxHeight: '100%' } : { maxHeight: '100vh' }}></span>
 							</>
 						) : null}
 						<button>About</button>
@@ -66,8 +83,8 @@ const Nav = (history: any) => {
 					<div className={navStyle.nav_col}>
 						{history.location.pathname === '/' ? (
 							<>
-								<span></span>
-								<span></span>
+								<span style={navBg ? { maxHeight: '100%' } : { maxHeight: '100vh' }}></span>
+								<span style={navBg ? { maxHeight: '0%' } : { maxHeight: '100vh' }}></span>
 							</>
 						) : null}
 						<button>Contact</button>

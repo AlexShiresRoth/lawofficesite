@@ -1,0 +1,84 @@
+@import '../../../sass/variables';
+@font-face {
+	font-family: 'Special';
+	src: url('../../fonts/BOSQUE.otf');
+}
+.section {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem;
+	& .heading {
+		width: 1500px;
+		& h2 {
+			font-family: 'Special';
+			font-size: 3.5rem;
+			color: $brand-main;
+			font-weight: 100;
+		}
+	}
+	& .grid {
+		width: 1500px;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr;
+		gap: 5rem;
+		& form {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1rem;
+			& .input_row {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				margin: 0.5rem 0;
+				& label {
+					font-size: 1.2rem;
+					color: $brand-main;
+					font-family: 'Montserrat';
+					margin: 0.2rem 0;
+				}
+				& input {
+					padding: 1rem;
+					border: 1px solid #eee;
+				}
+				& select {
+					padding: 1rem;
+					border: 1px solid #eee;
+				}
+				& textarea {
+					min-height: 10rem;
+					padding: 1rem;
+					border: 1px solid #eee;
+				}
+				& button {
+					padding: 1rem;
+					border: 1px solid $brand-main;
+					background: $brand-main;
+					color: #fff;
+					font-family: 'Montserrat', sans-serif, serif;
+					text-transform: uppercase;
+					font-size: 1.2rem;
+					transition: all 0.3s ease;
+					&:hover {
+						cursor: pointer;
+						box-shadow: 0 10px 12px darken($brand-main, 5%);
+					}
+				}
+			}
+			& .input_row:last-child {
+				grid-column-start: 1;
+				grid-column-end: 3;
+			}
+		}
+		& .business {
+			& h4 {
+				color: $brand-main;
+				font-weight: 700;
+				font-size: 2rem;
+				font-family: 'Special';
+			}
+		}
+	}
+}

@@ -1,0 +1,49 @@
+@import '../../../sass/variables';
+
+@font-face {
+	font-family: 'Special';
+	src: url('../../fonts/BOSQUE.otf');
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	border-top: 1px solid #eee;
+	margin-top: 2rem;
+	& .container {
+		width: 1500px;
+		max-width: 1500px;
+		display: flex;
+		flex-direction: column;
+		padding: 2rem;
+		& .row {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			& p {
+				color: $brand-main;
+				font-weight: 300;
+			}
+		}
+		& .grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: 1fr;
+			justify-items: center;
+			& .col {
+				& h4 {
+					font-family: 'Special';
+					color: $brand-accent;
+					font-weight: 100;
+					font-size: 1.5rem;
+				}
+				& a {
+					text-decoration: none;
+					color: $brand-secondary;
+				}
+			}
+		}
+	}
+}
