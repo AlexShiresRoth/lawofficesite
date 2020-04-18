@@ -288,6 +288,121 @@
 	}
 }
 
+@media screen and (max-width: 1200px) {
+	.navigation {
+		width: 100vw;
+		& button {
+			font-family: 'Montserrat';
+			font-size: 1rem;
+			&:hover {
+				cursor: pointer;
+			}
+			& a {
+				text-decoration: none;
+				color: $brand-accent;
+			}
+		}
+
+		& .nav_container {
+			width: 100%;
+			position: relative;
+			& .nav_right {
+				position: static;
+				& .nav_col:nth-child(1) {
+					position: static;
+					& span:nth-child(1) {
+						& .services {
+							& .col {
+								transition: all 1s ease;
+								margin: 1rem;
+								max-width: 10rem;
+							}
+						}
+					}
+					& .span_expanded {
+						width: 100vw;
+						height: 100vh;
+						top: 0;
+						left: 0;
+						& .services {
+							visibility: visible;
+							max-width: 900px;
+							& .col {
+								padding: 1rem;
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+								justify-content: center;
+								background: darken($brand-secondary, 5%);
+								box-shadow: 0 5px 5px darken($brand-secondary, 5%);
+								transition: all 1s ease;
+								& svg {
+									max-width: 4rem;
+									fill: $brand-secondary;
+								}
+							}
+							& .col:nth-child(1) {
+								grid-column-start: 1;
+								grid-column-end: 3;
+							}
+							& .col:last-child {
+								grid-column-start: 1;
+								grid-column-end: 3;
+							}
+							& button {
+								&:hover {
+									cursor: pointer;
+								}
+							}
+						}
+					}
+
+					& .span_hidden,
+					& .span_none {
+						background: $brand-secondary-fade;
+						height: 100%;
+						position: absolute;
+						visibility: hidden;
+						& .services {
+							& .col {
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+								justify-content: center;
+								opacity: 0;
+								max-width: 0;
+								transition: all 1s ease;
+								& svg {
+									max-width: 5rem;
+									fill: $brand-secondary;
+								}
+							}
+						}
+					}
+				}
+				& .nav_col:nth-child(2) {
+					& span:nth-child(1) {
+						height: 0%;
+						display: none;
+					}
+					& span:nth-child(2) {
+						height: 100%;
+						display: none;
+					}
+				}
+				& .nav_col:nth-child(3) {
+					& span:nth-child(1) {
+						display: none;
+					}
+					& span:nth-child(2) {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
 @keyframes slideDown {
 	0% {
 		transform: translateY(-80vh);
