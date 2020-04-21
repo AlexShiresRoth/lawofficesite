@@ -45,7 +45,7 @@ const MobileNav = ({ services }: MobileProps) => {
 						);
 					})}
 					<li>
-						<NavLink exact to="/">
+						<NavLink exact to="/about">
 							About
 						</NavLink>
 					</li>

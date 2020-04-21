@@ -83,7 +83,9 @@ const Nav = (history: any) => {
 								<span style={navBg ? { maxHeight: '100%' } : { maxHeight: '100vh' }}></span>
 							</>
 						) : null}
-						<button>About</button>
+						<NavLink to="/about">
+							<button>About</button>
+						</NavLink>
 					</div>
 					<div className={navStyle.nav_col}>
 						{history.location.pathname === '/' ? (

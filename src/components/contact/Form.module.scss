@@ -9,6 +9,73 @@
 	flex-direction: column;
 	align-items: center;
 	padding: 2rem;
+	position: relative;
+	& .alert_success {
+		width: 100%;
+		background: #30a73091;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.5s ease;
+		padding: 0.5rem;
+		& p {
+			color: #fff;
+		}
+	}
+	& .alert_loading {
+		width: 100%;
+		background: transparent;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.5s ease;
+		padding: 0.5rem;
+		& p {
+			color: #fff;
+		}
+	}
+	& .alert_error {
+		width: 100%;
+		background: rgba(224, 65, 65, 0.65);
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.5s ease;
+		padding: 0.5rem;
+		& p {
+			color: #fff;
+		}
+	}
+	& .alert_hidden {
+		width: 100%;
+		max-height: 0;
+		opacity: 0;
+		background: #30a73091;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.5s ease;
+		padding: 0.5rem;
+		& p {
+			color: #fff;
+		}
+	}
 	& .heading {
 		width: 100%;
 		& h2 {

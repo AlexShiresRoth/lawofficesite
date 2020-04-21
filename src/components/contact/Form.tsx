@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import formStyle from './Form.module.scss';
+import axios from 'axios';
 
 const Form = () => {
 	const [formData, sendFormData] = useState({
@@ -9,18 +10,107 @@ const Form = () => {
 		subject: '',
 	});
 
+	const [msgStatus, setMsgStatus] = useState({
+		status: '',
+		error: false,
+		loading: false,
+		success: false,
+	});
+
 	const { name, email, message, subject } = formData;
 
 	const onChange = (
 		e: React.FormEvent<HTMLInputElement> | React.FormEvent<HTMLSelectElement> | React.FormEvent<HTMLTextAreaElement>
 	) => sendFormData({ ...formData, [e.currentTarget.name]: e.currentTarget.value });
 
-	const formSubmit = (e: React.FormEvent) => {
+	const formSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		console.log(formData);
+		setMsgStatus({
+			status: 'Sending...',
+			error: false,
+			loading: true,
+			success: false,
+		});
+		await axios({
+			method: 'POST',
+			url: `https://asrserver.herokuapp.com/api/lawoffice/send-email`,
+			data: {
+				headers: {
+					'Access-Control-Allow-Origin': 'http://localhost:3000/',
+					'Content-Type': 'application/x-www-form-urlencoded',
+				},
+				...formData,
+			},
+		})
+			.then((res) => {
+				console.log(res);
+				setMsgStatus({
+					status: 'Thank you, your message has been sent and someone will be contacting you soon.',
+					error: false,
+					loading: false,
+					success: true,
+				});
+				setTimeout(() => {
+					sendFormData({
+						name: '',
+						email: '',
+						message: '',
+						subject: '',
+					});
+					setMsgStatus({
+						status: '',
+						error: false,
+						loading: false,
+						success: false,
+					});
+				}, 10000);
+			})
+			.catch((err) => {
+				const errMsg = JSON.stringify(err);
+				console.error(JSON.parse(errMsg).message);
+				setMsgStatus({
+					status: JSON.parse(errMsg).message,
+					error: true,
+					loading: false,
+					success: false,
+				});
+				setTimeout(() => {
+					sendFormData({
+						name: '',
+						email: '',
+						message: '',
+						subject: '',
+					});
+					setMsgStatus({
+						status: '',
+						error: false,
+						loading: false,
+						success: false,
+					});
+				}, 10000);
+			});
 	};
+
+	const { status, error, success, loading } = msgStatus;
+
 	return (
 		<section className={formStyle.section}>
+			<div
+				className={
+					status !== ''
+						? loading
+							? formStyle.alert_loading
+							: error
+							? formStyle.alert_error
+							: success
+							? formStyle.alert_success
+							: formStyle.alert_hidden
+						: formStyle.alert
+				}
+			>
+				<p>{status}</p>
+			</div>
 			<div className={formStyle.heading}>
 				<h2>Contact</h2>
 			</div>
