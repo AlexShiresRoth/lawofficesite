@@ -8,8 +8,7 @@
 .section {
 	display: flex;
 	flex-direction: column;
-	max-width: 1500px;
-	width: 1500px;
+	width: 80vw;
 	height: 100%;
 	& .heading {
 		margin-top: 8rem;
@@ -81,7 +80,7 @@
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
 				grid-template-rows: repeat(5, 1fr);
-				width: 80vw;
+				width: 85vw;
 			}
 		}
 	}

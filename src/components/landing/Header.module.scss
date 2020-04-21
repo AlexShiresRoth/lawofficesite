@@ -31,7 +31,8 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		align-items: center;
-		width: 1500px;
+		max-width: 1500px;
+		width: 80vw;
 		position: relative;
 		z-index: 1;
 		opacity: 0;
@@ -44,7 +45,7 @@
 				font-family: 'Special';
 				color: $brand-accent;
 				font-weight: 100;
-				font-size: 7rem;
+				font-size: 5rem;
 				margin: 0;
 			}
 			& h3 {
@@ -64,14 +65,14 @@
 			width: 80vw;
 			& .text_box {
 				& h1 {
-					font-size: 5rem;
+					font-size: 4rem;
 					margin: 0;
 				}
 				& h3 {
 					color: $brand-alt-fade;
 					font-family: 'Montserrat';
 					font-weight: 200;
-					font-size: 2rem;
+					font-size: 1.8rem;
 					margin: 0;
 				}
 			}
@@ -120,12 +121,12 @@
 }
 @media screen and (max-width: 600px) {
 	.header {
-			& .overlay {
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		background: linear-gradient(135deg, $brand-main 70%, #00204a67 0%);
-	}
+		& .overlay {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background: linear-gradient(135deg, $brand-main 70%, #00204a67 0%);
+		}
 		& .container {
 			width: 90vw;
 			& .text_box {

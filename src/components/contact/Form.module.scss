@@ -4,13 +4,13 @@
 	src: url('../../fonts/BOSQUE.otf');
 }
 .section {
-	width: 100%;
+	width: 80vw;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding: 2rem;
 	& .heading {
-		width: 1500px;
+		width: 100%;
 		& h2 {
 			font-family: 'Special';
 			font-size: 3.5rem;
@@ -19,7 +19,7 @@
 		}
 	}
 	& .grid {
-		width: 1500px;
+		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: 1fr;

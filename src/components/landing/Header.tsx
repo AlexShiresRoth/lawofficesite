@@ -11,7 +11,8 @@ const Header = (props: any) => {
 					<div className={headerStyle.col}>
 						<h1>
 							Rothenberg <br />
-							Law Offices, PLLC.
+							Law Offices, <br />
+							PLLC.
 						</h1>
 						<h3>Experience you can trust.</h3>
 						<h3>Established in 1992.</h3>
