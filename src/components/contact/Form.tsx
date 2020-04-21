@@ -7,7 +7,7 @@ const Form = () => {
 		name: '',
 		email: '',
 		message: '',
-		subject: '',
+		subject: 'Bankruptcy',
 	});
 
 	const [msgStatus, setMsgStatus] = useState({
@@ -148,7 +148,9 @@ const Form = () => {
 					<div className={formStyle.input_row}>
 						<label>Service Requested</label>
 						<select name="subject" value={subject} onChange={(e) => onChange(e)}>
-							<option value="Bankruptcy">Bankruptcy</option>
+							<option defaultValue="true" value="Bankruptcy">
+								Bankruptcy
+							</option>
 							<option value="Estate Planning">Estate Planning</option>
 							<option value="Estate & Trust Administration">Estate & Trust Administration</option>
 							<option value="Estate & Trust Challenges">Estate & Trust Challenges</option>
