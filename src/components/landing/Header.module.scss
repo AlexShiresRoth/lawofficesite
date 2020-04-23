@@ -1,7 +1,7 @@
 @import '../../../sass/variables';
 
 @font-face {
-	font-family: 'Special';
+	font-family: 'Main';
 	src: url('../../fonts/BOSQUE.otf');
 }
 
@@ -42,18 +42,43 @@
 			display: flex;
 			align-items: center;
 			& h1 {
-				font-family: 'Special';
+				font-family: 'Main', sans-serif;
 				color: $brand-accent;
 				font-weight: 100;
 				font-size: 5rem;
 				margin: 0;
+				text-transform: uppercase;
+				&::after {
+					content: '';
+					display: block;
+					margin: 1rem 0;
+					height: 1px;
+					background: $brand-secondary-fade;
+					width: 100%;
+				}
 			}
-			& h3 {
-				color: $brand-alt-fade;
+			& p {
+				color: #fff;
 				font-family: 'Montserrat';
 				font-weight: 200;
-				font-size: 2rem;
-				margin: 0;
+				font-size: 1.8rem;
+				line-height: 1;
+				margin: 2rem 0;
+			}
+			& button {
+				height: 3rem;
+				width: 100%;
+				background: $brand-secondary-fade;
+				border: 1px solid transparent;
+				color: #fff;
+				text-transform: uppercase;
+				border-radius: 2px;
+				transition: all 0.3s ease;
+				&:hover {
+					background: $brand-secondary;
+					cursor: pointer;
+					box-shadow: 0 5px 5px darken($brand-secondary, 10%);
+				}
 			}
 		}
 	}
@@ -68,12 +93,9 @@
 					font-size: 4rem;
 					margin: 0;
 				}
-				& h3 {
-					color: $brand-alt-fade;
-					font-family: 'Montserrat';
+				& p {
 					font-weight: 200;
 					font-size: 1.8rem;
-					margin: 0;
 				}
 			}
 		}
@@ -88,12 +110,9 @@
 					font-size: 4rem;
 					margin: 0;
 				}
-				& h3 {
-					color: $brand-alt-fade;
-					font-family: 'Montserrat';
+				& p {
 					font-weight: 200;
 					font-size: 1.6rem;
-					margin: 0;
 				}
 			}
 		}
@@ -108,12 +127,9 @@
 					font-size: 3.2rem;
 					margin: 0;
 				}
-				& h3 {
-					color: $brand-alt-fade;
-					font-family: 'Montserrat';
+				& p {
 					font-weight: 200;
 					font-size: 1.2rem;
-					margin: 0;
 				}
 			}
 		}
@@ -137,12 +153,12 @@
 					font-size: 3rem;
 					margin: 0;
 				}
-				& h3 {
-					color: $brand-alt-fade;
-					font-family: 'Montserrat';
+				& p {
 					font-weight: 200;
 					font-size: 1.4rem;
-					margin: 0;
+				}
+				& button {
+					width: 60%;
 				}
 			}
 		}

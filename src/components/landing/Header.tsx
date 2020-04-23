@@ -14,8 +14,11 @@ const Header = (props: any) => {
 							Law Offices, <br />
 							PLLC.
 						</h1>
-						<h3>Experience you can trust.</h3>
-						<h3>Established in 1992.</h3>
+						<p>
+							Schedule a free
+							<br /> 30 minute consultation today!
+						</p>
+						<button>Schedule</button>
 					</div>
 				</div>
 			</div>
