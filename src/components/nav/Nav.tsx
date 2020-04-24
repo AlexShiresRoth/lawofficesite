@@ -34,7 +34,7 @@ const Nav = (history: any) => {
 	}, []);
 
 	return (
-		<nav className={navStyle.navigation} style={navBg ? { background: `#00204a` } : { background: '' }}>
+		<nav className={navStyle.navigation} style={navBg ? { background: `#293462` } : { background: '' }}>
 			<MobileNav services={servicesArr} />
 			<div className={navStyle.nav_container}>
 				<div className={navStyle.nav_left}>
@@ -57,7 +57,6 @@ const Nav = (history: any) => {
 									? navStyle.span_hidden
 									: navStyle.span_none
 							}
-							style={navBg && !services ? { maxHeight: '100%' } : { maxHeight: '100vh' }}
 						>
 							<div className={navStyle.services}>
 								{servicesArr.map((service, i) => {
@@ -77,23 +76,14 @@ const Nav = (history: any) => {
 						</button>
 					</div>
 					<div className={navStyle.nav_col}>
-						{history.location.pathname === '/' ? (
-							<>
-								<span style={navBg ? { maxHeight: '0%' } : { maxHeight: '100vh' }}></span>{' '}
-								<span style={navBg ? { maxHeight: '100%' } : { maxHeight: '100vh' }}></span>
-							</>
-						) : null}
+						<span></span>
 						<NavLink to="/about">
 							<button>About</button>
 						</NavLink>
 					</div>
 					<div className={navStyle.nav_col}>
-						{history.location.pathname === '/' ? (
-							<>
-								<span style={navBg ? { maxHeight: '100%' } : { maxHeight: '100vh' }}></span>
-								<span style={navBg ? { maxHeight: '0%' } : { maxHeight: '100vh' }}></span>
-							</>
-						) : null}
+						<span></span>
+
 						<button>Contact</button>
 					</div>
 				</div>
