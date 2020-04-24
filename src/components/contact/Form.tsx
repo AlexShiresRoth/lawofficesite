@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import formStyle from './Form.module.scss';
 import axios from 'axios';
+import { setRef } from '../../actions/refs';
+import { connect } from 'react-redux';
 
-const Form = () => {
+interface FormProps {
+	setRef: (val: any) => any;
+}
+
+const Form = ({ setRef }: FormProps) => {
 	const [formData, sendFormData] = useState({
 		name: '',
 		email: '',
@@ -18,6 +24,8 @@ const Form = () => {
 	});
 
 	const { name, email, message, subject } = formData;
+
+	const contactRef = useRef(null);
 
 	const onChange = (
 		e: React.FormEvent<HTMLInputElement> | React.FormEvent<HTMLSelectElement> | React.FormEvent<HTMLTextAreaElement>
@@ -94,8 +102,12 @@ const Form = () => {
 
 	const { status, error, success, loading } = msgStatus;
 
+	useEffect(() => {
+		setRef(contactRef);
+	}, [contactRef, setRef]);
+
 	return (
-		<section className={formStyle.section}>
+		<section className={formStyle.section} ref={contactRef}>
 			<div
 				className={
 					status !== ''
@@ -173,9 +185,18 @@ const Form = () => {
 						<p>Brooklyn: 646-633-4555</p>
 					</div>
 				</div>
+				<div className={formStyle.map_container}>
+					<iframe src={`https://snazzymaps.com/embed/200241`} title="map"></iframe>
+				</div>
 			</div>
 		</section>
 	);
 };
 
-export default Form;
+const mapStateToProps = (state: any) => {
+	return {
+		refs: state.refs,
+	};
+};
+
+export default connect(mapStateToProps, { setRef })(Form);

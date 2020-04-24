@@ -11,7 +11,6 @@
 	z-index: 9999;
 	transition: all 1s ease;
 	& button {
-		font-family: 'Montserrat';
 		font-size: 1rem;
 		&:hover {
 			cursor: pointer;
@@ -23,6 +22,10 @@
 		& img {
 			max-width: 9rem;
 		}
+	}
+	& a {
+		text-decoration: none;
+		width: 100%;
 	}
 	& span {
 		transition: all 1s ease;
@@ -81,6 +84,11 @@
 					padding: 1rem;
 					position: relative;
 					z-index: 1;
+					width: 100%;
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+
 					&:hover {
 						cursor: pointer;
 					}

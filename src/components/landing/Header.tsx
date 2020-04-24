@@ -3,7 +3,22 @@ import headerStyle from './Header.module.scss';
 import { GoLaw } from 'react-icons/go';
 import { TiSocialFacebook, TiSocialTwitter, TiSocialLinkedin } from 'react-icons/ti';
 import { IoIosArrowDown } from 'react-icons/io';
-const Header = (props: any) => {
+import { connect } from 'react-redux';
+
+type HeaderProps = {
+	refs?: any;
+};
+
+const Header = ({ refs: { ref } }: HeaderProps) => {
+	const scrollToContact = () => {
+		console.log(ref);
+		window.scrollTo({
+			top: ref.current.offsetTop,
+			left: 0,
+			behavior: 'smooth',
+		});
+	};
+
 	return (
 		<header className={headerStyle.header}>
 			<div className={headerStyle.overlay}></div>
@@ -24,7 +39,7 @@ const Header = (props: any) => {
 						Schedule a free
 						<br /> 30 minute consultation today!
 					</p>
-					<button>Schedule</button>
+					<button onClick={() => scrollToContact()}>Schedule</button>
 					<p>
 						<TiSocialFacebook /> <TiSocialTwitter /> <TiSocialLinkedin />
 					</p>
@@ -37,4 +52,10 @@ const Header = (props: any) => {
 	);
 };
 
-export default Header;
+const mapStateToProps = (state: any) => {
+	return {
+		refs: state.refs,
+	};
+};
+
+export default connect(mapStateToProps, null)(Header);

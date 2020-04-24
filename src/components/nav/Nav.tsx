@@ -3,8 +3,15 @@ import navStyle from './Nav.module.scss';
 import MobileNav from './MobileNav';
 import { NavLink, withRouter } from 'react-router-dom';
 import { estateSvg, trust, challenges, bankruptcy } from './navSvgs';
+import { MdClose, MdArrowDropDown } from 'react-icons/md';
+import { connect } from 'react-redux';
 
-const Nav = (history: any) => {
+interface NavProps {
+	history: any;
+	refs?: any;
+}
+
+const Nav = ({ history, refs: { ref } }: NavProps) => {
 	const servicesArr = [
 		{ title: 'Estate Planning', icon: estateSvg, path: '/estateplanning' },
 		{ title: 'Estate & Trust Administration', icon: trust, path: '/estateadmin' },
@@ -21,6 +28,14 @@ const Nav = (history: any) => {
 	const [navBg, setNavBg] = useState(false);
 
 	const { services } = expanded;
+	const scrollToContact = () => {
+		console.log(ref);
+		window.scrollTo({
+			top: ref.current.offsetTop,
+			left: 0,
+			behavior: 'smooth',
+		});
+	};
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -72,11 +87,20 @@ const Nav = (history: any) => {
 							</div>
 						</span>
 						<button onClick={() => setExpanded({ services: !services, contact: false, about: false })}>
-							Services
+							{!services ? (
+								<>
+									Services <MdArrowDropDown />
+								</>
+							) : (
+								<>
+									Services <MdClose />{' '}
+								</>
+							)}
 						</button>
 					</div>
 					<div className={navStyle.nav_col}>
 						<span></span>
+
 						<NavLink to="/about">
 							<button>About</button>
 						</NavLink>
@@ -84,7 +108,7 @@ const Nav = (history: any) => {
 					<div className={navStyle.nav_col}>
 						<span></span>
 
-						<button>Contact</button>
+						<button onClick={() => scrollToContact()}>Contact</button>
 					</div>
 				</div>
 			</div>
@@ -92,4 +116,8 @@ const Nav = (history: any) => {
 	);
 };
 
-export default withRouter(Nav);
+const mapStateToProps = (state: any) => ({
+	refs: state.refs,
+});
+
+export default connect(mapStateToProps, null)(withRouter(Nav));
