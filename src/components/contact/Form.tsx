@@ -108,7 +108,7 @@ const Form = ({ setRef }: FormProps) => {
 	}, [contactRef, setRef]);
 
 	return (
-		<section className={formStyle.section} ref={contactRef}>
+		<section className={formStyle.section}>
 			<NegativeGrid />
 			<div
 				className={
@@ -125,7 +125,7 @@ const Form = ({ setRef }: FormProps) => {
 			>
 				<p>{status}</p>
 			</div>
-			<div className={formStyle.heading}>
+			<div className={formStyle.heading} ref={contactRef}>
 				<h2>Contact</h2>
 			</div>
 			<div className={formStyle.grid}>
