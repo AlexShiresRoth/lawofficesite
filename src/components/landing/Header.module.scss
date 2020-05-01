@@ -8,8 +8,7 @@
 .header {
 	background: url('https://res.cloudinary.com/snackmanproductions/image/upload/c_scale,q_59,w_2084/v1587071745/lawoffice/j-zamora-GWOTvo3qq7U-unsplash_xthngq.jpg');
 	width: 100vw;
-	height: 80vh;
-	min-height: 80vh;
+	min-height: 40rem;
 	background-position: center;
 	background-size: cover;
 	display: flex;
@@ -23,7 +22,7 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		background: linear-gradient(135deg, $brand-main 67%, $brand-main-fade 0%);
+		background: linear-gradient(135deg, $brand-main 64%, $brand-main-fade 0%);
 	}
 	& .arrow_container {
 		display: flex;
@@ -57,14 +56,14 @@
 				font-family: 'Main', sans-serif;
 				color: $brand-accent;
 				font-weight: 100;
-				font-size: 4rem;
+				font-size: 3rem;
 				margin: 0;
 				text-transform: uppercase;
 			}
 			& p {
 				color: $brand-alt;
 				font-weight: 200;
-				font-size: 1.8rem;
+				font-size: 1.6rem;
 				line-height: 1;
 				margin: 1rem 0;
 				display: flex;
@@ -80,7 +79,7 @@
 			& p {
 				color: #eee;
 				font-weight: 200;
-				font-size: 1.8rem;
+				font-size: 1.5rem;
 				line-height: 1;
 				margin: 1rem 0;
 				& svg {
@@ -114,12 +113,12 @@
 			width: 80vw;
 			& .text_box {
 				& h1 {
-					font-size: 4rem;
+					font-size: 3rem;
 					margin: 0;
 				}
 				& p {
 					font-weight: 200;
-					font-size: 1.8rem;
+					font-size: 1.6rem;
 				}
 			}
 		}
@@ -131,7 +130,7 @@
 			width: 80vw;
 			& .text_box {
 				& h1 {
-					font-size: 4rem;
+					font-size: 3rem;
 					margin: 0;
 				}
 				& p {
@@ -148,7 +147,7 @@
 			width: 80vw;
 			& .text_box {
 				& h1 {
-					font-size: 3.2rem;
+					font-size: 2.7rem;
 					margin: 0;
 				}
 				& p {
