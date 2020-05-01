@@ -36,7 +36,7 @@ const Header = ({ refs: { ref } }: HeaderProps) => {
 				</div>
 				<div className={headerStyle.action_box}>
 					<p>
-						Schedule a free
+						Schedule a free onetime
 						<br /> 30 minute consultation today!
 					</p>
 					<button onClick={() => scrollToContact()}>Schedule</button>
@@ -44,9 +44,6 @@ const Header = ({ refs: { ref } }: HeaderProps) => {
 						<TiSocialFacebook /> <TiSocialTwitter /> <TiSocialLinkedin />
 					</p>
 				</div>
-			</div>
-			<div className={headerStyle.arrow_container}>
-				<IoIosArrowDown />
 			</div>
 		</header>
 	);

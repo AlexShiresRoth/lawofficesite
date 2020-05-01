@@ -6,10 +6,10 @@
 }
 
 .header {
-	background: url('https://res.cloudinary.com/snackmanproductions/image/upload/v1587071745/lawoffice/j-zamora-GWOTvo3qq7U-unsplash_xthngq.jpg');
+	background: url('https://res.cloudinary.com/snackmanproductions/image/upload/c_scale,q_59,w_2084/v1587071745/lawoffice/j-zamora-GWOTvo3qq7U-unsplash_xthngq.jpg');
 	width: 100vw;
-	height: 100vh;
-	min-height: 100vh;
+	height: 80vh;
+	min-height: 80vh;
 	background-position: center;
 	background-size: cover;
 	display: flex;
@@ -23,7 +23,7 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		background: linear-gradient(135deg, $brand-main 70%, $brand-main-fade 0%);
+		background: linear-gradient(135deg, $brand-main 67%, $brand-main-fade 0%);
 	}
 	& .arrow_container {
 		display: flex;
@@ -41,7 +41,7 @@
 		width: 100%;
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: repeat(2, auto);
+		grid-template-rows: repeat(3, auto);
 		max-width: 1500px;
 		width: 80vw;
 		position: relative;
