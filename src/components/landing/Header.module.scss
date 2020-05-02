@@ -362,6 +362,15 @@
 					width: 45%;
 				}
 			}
+			& .neg_grid {
+				& .survey_container {
+					& button {
+						padding: 0;
+						height: 3rem;
+						min-width: 6rem;
+					}
+				}
+			}
 		}
 	}
 }

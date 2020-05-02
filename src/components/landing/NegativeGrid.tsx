@@ -2,7 +2,7 @@ import React from 'react';
 import gridStyle from './Header.module.scss';
 import { withRouter } from 'react-router-dom';
 import { MdQuestionAnswer, MdCall, MdKeyboardArrowRight } from 'react-icons/md';
-import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
+import { FaQuoteLeft } from 'react-icons/fa';
 interface NegGridProps {
 	history?: any;
 }
