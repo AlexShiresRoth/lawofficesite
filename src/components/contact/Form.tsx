@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import formStyle from './Form.module.scss';
 import axios from 'axios';
-import NegativeGrid from './NegativeGrid';
 import { setRef } from '../../actions/refs';
 import { connect } from 'react-redux';
 
@@ -108,8 +107,10 @@ const Form = ({ setRef }: FormProps) => {
 	}, [contactRef, setRef]);
 
 	return (
-		<section className={formStyle.section}>
-			<NegativeGrid />
+		<section className={formStyle.section} ref={contactRef}>
+			<div className={formStyle.heading}>
+				<h2>Contact</h2>
+			</div>
 			<div
 				className={
 					status !== ''
@@ -124,9 +125,6 @@ const Form = ({ setRef }: FormProps) => {
 				}
 			>
 				<p>{status}</p>
-			</div>
-			<div className={formStyle.heading} ref={contactRef}>
-				<h2>Contact</h2>
 			</div>
 			<div className={formStyle.grid}>
 				<form onSubmit={(e) => formSubmit(e)}>

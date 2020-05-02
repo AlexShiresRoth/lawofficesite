@@ -1,5 +1,5 @@
 import React from 'react';
-import gridStyle from './Form.module.scss';
+import gridStyle from './Header.module.scss';
 import { withRouter } from 'react-router-dom';
 import { MdQuestionAnswer, MdCall, MdKeyboardArrowRight } from 'react-icons/md';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
@@ -16,7 +16,7 @@ const NegativeGrid = ({ history }: NegGridProps) => {
 				<MdQuestionAnswer />
 				<p>Take a quick survey to narrow down your search</p>
 				<button>
-					Go to Survey <MdKeyboardArrowRight />
+					Survey <MdKeyboardArrowRight />
 				</button>
 			</div>
 			<div className={gridStyle.survey_container}>
@@ -34,7 +34,7 @@ const NegativeGrid = ({ history }: NegGridProps) => {
 				<FaQuoteLeft />
 				<p>Check out our testimonials</p>
 				<button>
-					View <MdKeyboardArrowRight />
+					Testimonials <MdKeyboardArrowRight />
 				</button>
 			</div>
 		</section>
