@@ -109,7 +109,7 @@ const Form = ({ setRef }: FormProps) => {
 	return (
 		<section className={formStyle.section} ref={contactRef}>
 			<div className={formStyle.heading}>
-				<h2>Send us a message.</h2>
+				<h2>Send us a message and get started today.</h2>
 			</div>
 			<div
 				className={

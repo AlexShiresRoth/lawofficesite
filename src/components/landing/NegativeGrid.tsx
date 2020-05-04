@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import gridStyle from './Header.module.scss';
 import { withRouter } from 'react-router-dom';
 import { MdQuestionAnswer, MdCall, MdKeyboardArrowRight } from 'react-icons/md';
@@ -9,34 +9,61 @@ interface NegGridProps {
 
 const NegativeGrid = ({ history }: NegGridProps) => {
 	//design these better
+	const [isMobile, setMobile] = useState(false);
+	useEffect(() => {
+		const handleResize = () => {
+			setMobile(window.innerWidth <= 600);
+		};
+
+		window.addEventListener('resize', handleResize);
+		window.addEventListener('load', handleResize);
+
+		return () => window.removeEventListener('resize', handleResize);
+	}, [isMobile]);
+
+	const boxes = [
+		{
+			title: 'Survey',
+			icon: <MdQuestionAnswer />,
+			par: `Take a quick survey to narrow down your search`,
+			link: '',
+		},
+		{
+			title: 'Call',
+			icon: <MdCall />,
+			par: `Call us today to get started!`,
+			link: 'tel:631-363-8749',
+		},
+		{
+			title: 'Testimonials',
+			icon: <FaQuoteLeft />,
+			par: `Check out our testimonials`,
+			link: '',
+		},
+	];
+
 	return history.location.pathname === '/' ? (
 		<section className={gridStyle.neg_grid}>
-			<div className={gridStyle.survey_container}>
-				<div className={gridStyle.bg}></div>
-				<MdQuestionAnswer />
-				<p>Take a quick survey to narrow down your search</p>
-				<button>
-					Survey <MdKeyboardArrowRight />
-				</button>
-			</div>
-			<div className={gridStyle.survey_container}>
-				<div className={gridStyle.bg}></div>
-				<MdCall />
-				<p>Call us today to get started!</p>
-				<a href="tel:631-363-8749">
-					<button>
-						Call <MdKeyboardArrowRight />
-					</button>
-				</a>
-			</div>
-			<div className={gridStyle.survey_container}>
-				<div className={gridStyle.bg}></div>
-				<FaQuoteLeft />
-				<p>Check out our testimonials</p>
-				<button>
-					Testimonials <MdKeyboardArrowRight />
-				</button>
-			</div>
+			{boxes.map((item, i) => {
+				return !isMobile ? (
+					<div className={gridStyle.survey_container}>
+						<div className={gridStyle.bg}></div>
+						{item.icon}
+						<p key={i}>{item.par}</p>
+						<a href={item.link}>
+							<button>
+								{item.title} <MdKeyboardArrowRight />
+							</button>
+						</a>
+					</div>
+				) : (
+					<div className={gridStyle.survey_container}>
+						<a href={item.link}>
+							<button>{item.icon}</button>
+						</a>
+					</div>
+				);
+			})}
 		</section>
 	) : null;
 };
