@@ -1,0 +1,182 @@
+@import '../../../sass/variables';
+@font-face {
+	font-family: 'Special';
+	src: url('../../fonts/wotfard.ttf');
+}
+.section {
+	display: flex;
+	flex-direction: column;
+	width: 80vw;
+	height: 100%;
+	& .heading {
+		margin-top: 8rem;
+		& h2 {
+			font-family: 'Special', sans-serif, serif;
+			font-weight: 100;
+			font-size: 2.5rem;
+			color: $brand-main;
+		}
+	}
+	& .content_grid {
+		background: #eee;
+		box-shadow: 0 1px 3px darken(#eee, 3%);
+		padding: 1rem;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		& button {
+			background: transparent;
+			border: 0;
+			color: $brand-main;
+			font-weight: 700;
+			padding: 0.5rem 1rem;
+			transition: all 0.3s ease;
+			letter-spacing: 2px;
+			&:hover {
+				cursor: pointer;
+			}
+			&:focus {
+				outline: 0px solid $brand-main;
+			}
+		}
+		& button:not(:last-child) {
+			border-right: 1px solid #fff;
+		}
+		& .current {
+			background: $brand-alt;
+			color: #fff;
+			font-weight: 500;
+		}
+	}
+	& .survey {
+		& form {
+			display: flex;
+			flex-direction: column;
+			& .question_row {
+				padding: 2rem;
+				margin: 0.5rem 0;
+				box-shadow: 0 1px 10px #eee;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				position: relative;
+				& label {
+					color: $brand-main;
+					font-family: 'Open Sans';
+					font-weight: 700;
+					& span {
+						color: $brand-alt;
+					}
+				}
+				& input {
+					position: absolute;
+					height: 0;
+				}
+			}
+			& button {
+				background: $brand-main;
+				color: #fff;
+				border: 1px solid $brand-main;
+				height: 4rem;
+				width: 15rem;
+				align-self: flex-end;
+				margin: 1rem 0;
+				text-transform: uppercase;
+				box-shadow: 0px 1px 25px lighten($brand-main, 10%);
+				transition: all 0.3s ease;
+				&:hover {
+					cursor: pointer;
+					background: lighten($brand-main, 5%);
+					box-shadow: 0px 1px 10px lighten($brand-main, 5%);
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.section {
+		& .heading {
+			margin-top: 8rem;
+			& h2 {
+				font-size: 2rem;
+				color: $brand-main;
+			}
+		}
+		& .content_grid {
+			background: #eee;
+			box-shadow: 0 1px 3px darken(#eee, 3%);
+			padding: 0.5rem;
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			& button {
+				background: transparent;
+				border: 0;
+				color: $brand-main;
+				font-weight: 700;
+				padding: 0.5rem;
+				transition: all 0.3s ease;
+				letter-spacing: 2px;
+				font-size: 0.9rem;
+				&:hover {
+					cursor: pointer;
+				}
+				&:focus {
+					outline: 0px solid $brand-main;
+				}
+			}
+			& button:not(:last-child) {
+				border-right: 1px solid #fff;
+			}
+			& .current {
+				background: $brand-alt;
+				color: #fff;
+				font-weight: 500;
+			}
+		}
+	}
+}
+@media screen and (max-width: 900px) {
+	.section {
+		& .heading {
+			margin-top: 8rem;
+			& h2 {
+				font-size: 1.8rem;
+				color: $brand-main;
+			}
+		}
+		& .content_grid {
+			background: #eee;
+			box-shadow: 0 1px 3px darken(#eee, 3%);
+			padding: 0.5rem;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			& button {
+				background: transparent;
+				border: 1px solid #fff;
+				color: $brand-main;
+				font-weight: 700;
+				padding: 0.5rem;
+				transition: all 0.3s ease;
+				letter-spacing: 2px;
+				font-size: 0.9rem;
+				&:hover {
+					cursor: pointer;
+				}
+				&:focus {
+					outline: 0px solid $brand-main;
+				}
+			}
+
+			& .current {
+				background: $brand-alt;
+				color: #fff;
+				font-weight: 500;
+			}
+		}
+		& .survey {
+			& form {
+			}
+		}
+	}
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import gridStyle from './Header.module.scss';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import { MdQuestionAnswer, MdCall, MdKeyboardArrowRight } from 'react-icons/md';
 import { FaQuoteLeft } from 'react-icons/fa';
 interface NegGridProps {
@@ -27,18 +27,21 @@ const NegativeGrid = ({ history }: NegGridProps) => {
 			icon: <MdQuestionAnswer />,
 			par: `Take a quick survey to help us understand your needs`,
 			link: '',
+			path: '/survey',
 		},
 		{
 			title: 'Call',
 			icon: <MdCall />,
 			par: `Call us today to get started!`,
 			link: 'tel:631-363-8749',
+			path: null,
 		},
 		{
 			title: 'Testimonials',
 			icon: <FaQuoteLeft />,
 			par: `Check out our testimonials`,
 			link: '',
+			path: null,
 		},
 	];
 
@@ -50,11 +53,19 @@ const NegativeGrid = ({ history }: NegGridProps) => {
 						<div className={gridStyle.bg}></div>
 						{item.icon}
 						<p key={i}>{item.par}</p>
-						<a href={item.link}>
-							<button>
-								{item.title} <MdKeyboardArrowRight />
-							</button>
-						</a>
+						{item.path !== null ? (
+							<NavLink to={item.path}>
+								<button>
+									{item.title} <MdKeyboardArrowRight />
+								</button>
+							</NavLink>
+						) : (
+							<a href={item.link}>
+								<button>
+									{item.title} <MdKeyboardArrowRight />
+								</button>
+							</a>
+						)}
 					</div>
 				) : (
 					<div className={gridStyle.survey_container}>

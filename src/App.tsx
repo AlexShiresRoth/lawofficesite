@@ -6,6 +6,7 @@ import EstateAdministrationPage from './components/pages/EstateAdministrationPag
 import EstateAndTrustPage from './components/pages/EstateTrustPage';
 import BankruptcyPage from './components/pages/BankruptcyPage';
 import AboutPage from './components/pages/AboutPage';
+import SurveyPage from './components/pages/SurveyPage';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
@@ -21,6 +22,7 @@ const App: React.FunctionComponent = () => {
 					<Route path="/estateandtrust" component={EstateAndTrustPage} />
 					<Route path="/bankruptcy" component={BankruptcyPage} />
 					<Route path="/about" component={AboutPage} />
+					<Route path="/survey" component={SurveyPage} />
 				</Switch>
 			</Router>
 		</Provider>

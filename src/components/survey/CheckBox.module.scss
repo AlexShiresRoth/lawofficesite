@@ -1,0 +1,32 @@
+@import '../../../sass/variables';
+
+.checkbox {
+	height: 1.5rem;
+	width: 1.5rem;
+	border: 2px solid #eee;
+	display: block;
+	transition: all 0.5s ease;
+	border-radius: 3px;
+	&:hover {
+		cursor: pointer;
+	}
+}
+.checked {
+	height: 1.5rem;
+	width: 1.5rem;
+	background: $brand-main;
+	border: 2px solid $brand-main;
+	border-radius: 3px;
+	transition: all 0.5s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 1px 10px lighten($brand-main, 10%);
+	&:hover {
+		cursor: pointer;
+	}
+	& svg {
+		fill: #fff;
+		font-size: 2rem;
+	}
+}

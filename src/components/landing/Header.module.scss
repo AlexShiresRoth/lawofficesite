@@ -8,7 +8,7 @@
 .header {
 	background: url('https://res.cloudinary.com/snackmanproductions/image/upload/c_scale,q_62,w_2579/v1587071745/lawoffice/j-zamora-GWOTvo3qq7U-unsplash_xthngq.jpg');
 	width: 100vw;
-	min-height: 60rem;
+	min-height: 95vh;
 	background-position: 50% 90%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -27,7 +27,7 @@
 	}
 	& .bg_svg {
 		position: absolute;
-		bottom: -10%;
+		bottom: -22%;
 		left: 0%;
 		width: 100%;
 		z-index: 1;
@@ -47,6 +47,7 @@
 		position: relative;
 		z-index: 1;
 		opacity: 0;
+		margin-top: 3rem;
 		animation: fadeIn 1.5s linear forwards;
 		& .text_box {
 			display: flex;
@@ -194,6 +195,9 @@
 
 @media screen and (max-width: 1500px) {
 	.header {
+		& .bg_svg {
+			bottom: -19%;
+		}
 		& .container {
 			width: 80vw;
 			& .text_box {
@@ -234,6 +238,9 @@
 }
 @media screen and (max-width: 1225px) {
 	.header {
+		& .bg_svg {
+			bottom: -13%;
+		}
 		& .container {
 			width: 85vw;
 			& .text_box {
@@ -258,7 +265,6 @@
 }
 @media screen and (max-width: 1100px) {
 	.header {
-		min-height: 55rem;
 		& .container {
 			grid-template-columns: 1fr;
 			& .neg_grid {
@@ -275,7 +281,6 @@
 }
 @media screen and (max-width: 900px) {
 	.header {
-		min-height: 50rem;
 		& .bg_svg {
 			position: absolute;
 			bottom: -0%;
@@ -329,12 +334,11 @@
 }
 @media screen and (max-width: 600px) {
 	.header {
-		min-height: 43rem;
 		& .overlay {
 			position: absolute;
 			height: 100%;
 			width: 100%;
-			background: linear-gradient(145deg, #293462ef 64%, #2934627c 54.1%);
+			background: linear-gradient(145deg, #293462ef 74%, #2934627c 54.1%);
 		}
 
 		& .container {
