@@ -1,9 +1,9 @@
 @import '../../../sass/variables';
 
 .checkbox {
-	height: 1.5rem;
-	width: 1.5rem;
-	border: 2px solid #eee;
+	height: 1.3rem;
+	min-width: 1.3rem;
+	border: 5px solid #eee;
 	display: block;
 	transition: all 0.5s ease;
 	border-radius: 3px;
@@ -12,21 +12,22 @@
 	}
 }
 .checked {
-	height: 1.5rem;
-	width: 1.5rem;
+	height: 1.3rem;
+	min-width: 1.3rem;
 	background: $brand-main;
-	border: 2px solid $brand-main;
+	border: 5px solid $brand-main;
 	border-radius: 3px;
 	transition: all 0.5s ease;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	box-shadow: 0 1px 10px lighten($brand-main, 10%);
+	overflow: visible;
 	&:hover {
 		cursor: pointer;
 	}
 	& svg {
 		fill: #fff;
-		font-size: 2rem;
+		font-size: 1.2rem;
 	}
 }

@@ -25,7 +25,7 @@ const NegativeGrid = ({ history }: NegGridProps) => {
 		{
 			title: 'Survey',
 			icon: <MdQuestionAnswer />,
-			par: `Take a quick survey to help us understand your needs`,
+			par: `Fill out a quick questionnaire to help us understand your needs`,
 			link: '',
 			path: '/survey',
 		},
@@ -69,9 +69,15 @@ const NegativeGrid = ({ history }: NegGridProps) => {
 					</div>
 				) : (
 					<div className={gridStyle.survey_container}>
-						<a href={item.link}>
-							<button>{item.icon}</button>
-						</a>
+						{item.path !== null ? (
+							<NavLink to={item.path}>
+								<button>{item.icon}</button>
+							</NavLink>
+						) : (
+							<a href={item.link}>
+								<button>{item.icon}</button>
+							</a>
+						)}
 					</div>
 				);
 			})}

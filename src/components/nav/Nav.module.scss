@@ -146,7 +146,7 @@
 						display: grid;
 						grid-template-columns: repeat(2, 1fr);
 						grid-template-rows: repeat(3, 1fr);
-						gap: 2rem;
+						gap: 1rem;
 						justify-items: center;
 						align-items: center;
 						margin-top: 5rem;
@@ -161,7 +161,7 @@
 							transition: all 1s ease;
 							border-radius: 10px;
 							& svg {
-								max-width: 4rem;
+								max-width: 3.5rem;
 								fill: $brand-secondary;
 							}
 						}

@@ -2,19 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { surveyContent } from './surveyContent';
 import surveyStyle from './Survey.module.scss';
 import CheckBox from './CheckBox';
+import { clearCheckBoxes } from '../../actions/survey';
+import { connect } from 'react-redux';
 
-const Survey = () => {
+interface SurveyProps {
+	survey?: any;
+	clearCheckBoxes: () => void;
+}
+//TODO figure out how to add checkbox into certain point in redux store as opposed to building in an array full of empty boxes
+const Survey = ({ survey: { checkboxes }, clearCheckBoxes }: SurveyProps) => {
 	const [current, setCurrent] = useState(0);
 
-	const [checkBoxes, handleCheckBoxes] = useState([]);
+	const [checkBoxes, handleCheckBoxes] = useState([] as any);
 
 	const handleSurveySelect = (questions: any) => {
 		handleCheckBoxes(questions);
 	};
 
 	useEffect(() => {
-		setCurrent(0);
-	}, []);
+		clearCheckBoxes();
+	}, [current, clearCheckBoxes]);
 
 	const handleCurrentChange = (key: number) => setCurrent(key);
 
@@ -22,8 +29,8 @@ const Survey = () => {
 		<section className={surveyStyle.section}>
 			<div className={surveyStyle.heading}>
 				<h2>
-					Please fill out one of these quick surveys to help us understand your needs and make the process as
-					quick and easy as possible for you.
+					Please fill out one of these quick questionnaires to help us understand your needs and make the
+					process as quick and easy as possible for you.
 				</h2>
 			</div>
 			<div className={surveyStyle.content_grid}>
@@ -57,7 +64,7 @@ const Survey = () => {
 												<span>{i + 1}.</span> {question}
 											</label>
 											<input type="checkbox"></input>
-											<CheckBox question={question} />
+											<CheckBox question={question} index={i} current={current} />
 										</div>
 									);
 								})}
@@ -70,4 +77,11 @@ const Survey = () => {
 	);
 };
 
-export default Survey;
+const mapStateToProps = (state: any) => {
+	console.log(state);
+	return {
+		survey: state.survey,
+	};
+};
+
+export default connect(mapStateToProps, { clearCheckBoxes })(Survey);

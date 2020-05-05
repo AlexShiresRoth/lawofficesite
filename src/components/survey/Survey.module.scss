@@ -22,7 +22,7 @@
 		box-shadow: 0 1px 3px darken(#eee, 3%);
 		padding: 1rem;
 		display: grid;
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 		& button {
 			background: transparent;
 			border: 0;
@@ -63,6 +63,7 @@
 					color: $brand-main;
 					font-family: 'Open Sans';
 					font-weight: 700;
+					margin-right: 0.5rem;
 					& span {
 						color: $brand-alt;
 					}
@@ -107,7 +108,7 @@
 			box-shadow: 0 1px 3px darken(#eee, 3%);
 			padding: 0.5rem;
 			display: grid;
-			grid-template-columns: repeat(5, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 			& button {
 				background: transparent;
 				border: 0;
@@ -137,6 +138,7 @@
 }
 @media screen and (max-width: 900px) {
 	.section {
+		width: 90vw;
 		& .heading {
 			margin-top: 8rem;
 			& h2 {
@@ -176,6 +178,9 @@
 		}
 		& .survey {
 			& form {
+				& .question_row {
+					padding: 1rem;
+				}
 			}
 		}
 	}

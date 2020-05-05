@@ -62,11 +62,4 @@ export const surveyContent = [
 			'Are you an absentee landlord in need of someone to oversee your property?',
 		],
 	},
-	{
-		title: 'Commercial Transaction',
-		questions: ['Are you buying a business?'],
-		subQuestion: '2. Are you selling a business?',
-		subQuestions: ['-Do you have any offer?', '-Have you put together documentation for the sale?'],
-		subSubQuestions: ['1. Due Diligence', '2. Leases', '3. Financial Statements'],
-	},
 ];

@@ -17,17 +17,17 @@
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	overflow-y: hidden;
+	overflow-y: visible;
 
 	& .overlay {
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		background: linear-gradient(145deg, #293462ef 54%, #2934627c 54.1%);
+		background: linear-gradient(140deg, #293462ef 60%, #2934627c 60.1%);
 	}
 	& .bg_svg {
 		position: absolute;
-		bottom: -22%;
+		bottom: -2rem;
 		left: 0%;
 		width: 100%;
 		z-index: 1;
@@ -47,7 +47,7 @@
 		position: relative;
 		z-index: 1;
 		opacity: 0;
-		margin-top: 3rem;
+		margin-top: 8rem;
 		animation: fadeIn 1.5s linear forwards;
 		& .text_box {
 			display: flex;
@@ -195,9 +195,6 @@
 
 @media screen and (max-width: 1500px) {
 	.header {
-		& .bg_svg {
-			bottom: -19%;
-		}
 		& .container {
 			width: 80vw;
 			& .text_box {
@@ -238,9 +235,6 @@
 }
 @media screen and (max-width: 1225px) {
 	.header {
-		& .bg_svg {
-			bottom: -13%;
-		}
 		& .container {
 			width: 85vw;
 			& .text_box {
@@ -338,10 +332,11 @@
 			position: absolute;
 			height: 100%;
 			width: 100%;
-			background: linear-gradient(145deg, #293462ef 74%, #2934627c 54.1%);
+			background: linear-gradient(145deg, #293462ef 100%, #2934627c 54.1%);
 		}
 
 		& .container {
+			margin-top: 12rem;
 			width: 90vw;
 			& .text_box {
 				grid-column-start: 1;
