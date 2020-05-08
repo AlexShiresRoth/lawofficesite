@@ -47,8 +47,8 @@ const Header = ({ refs: { ref } }: HeaderProps) => {
 					</div>
 					<div className={headerStyle.action_box}>
 						<p>
-							Schedule a free onetime
-							<br /> 30 minute consultation today!
+							Schedule a free
+							<br /> 30 minute virtual consultation today!
 						</p>
 						<button onClick={() => scrollToContact()}>Schedule</button>
 						<p>

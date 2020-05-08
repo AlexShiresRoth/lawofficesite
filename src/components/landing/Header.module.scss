@@ -328,6 +328,7 @@
 }
 @media screen and (max-width: 600px) {
 	.header {
+		min-height: 100vh;
 		& .overlay {
 			position: absolute;
 			height: 100%;
@@ -343,14 +344,14 @@
 				grid-column-end: 3;
 				padding: 0rem;
 				& h1 {
-					font-size: 2.5rem;
+					font-size: 9vw;
 					margin: 0;
 				}
 				& p {
 					display: flex;
 					flex-wrap: wrap;
 					font-weight: 200;
-					font-size: 1.2rem;
+					font-size: 5vw;
 				}
 				& button {
 					width: 60%;
@@ -360,19 +361,20 @@
 				& p {
 					color: #eee;
 					font-weight: 200;
-					font-size: 1.2rem;
+					font-size: 5vw;
 					line-height: 1;
 					margin: 1rem 0;
 					& svg {
 						fill: $brand-accent;
 						margin: 0 0.5rem;
-						font-size: 1.6rem;
+						font-size: 5vw;
 					}
 				}
 				& button {
 					margin: 1rem 0;
-					height: 3rem;
+					height: 2.5rem;
 					width: 45%;
+					font-size: 4vw;
 				}
 			}
 			& .neg_grid {
@@ -380,10 +382,11 @@
 				& .survey_container {
 					& button {
 						padding: 0;
-						height: 3rem;
-						min-width: 6rem;
+						height: 2.6rem;
+						min-width: 5rem;
 						& svg {
 							fill: $brand-alt;
+							font-size: 5vw;
 						}
 					}
 				}

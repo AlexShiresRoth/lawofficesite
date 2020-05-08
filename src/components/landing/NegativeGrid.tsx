@@ -9,14 +9,13 @@ interface NegGridProps {
 
 const NegativeGrid = ({ history }: NegGridProps) => {
 	//design these better
-	const [isMobile, setMobile] = useState(false);
+	const [isMobile, setMobile] = useState(window.innerWidth <= 600);
 	useEffect(() => {
 		const handleResize = () => {
 			setMobile(window.innerWidth <= 600);
 		};
 
 		window.addEventListener('resize', handleResize);
-		window.addEventListener('load', handleResize);
 
 		return () => window.removeEventListener('resize', handleResize);
 	}, [isMobile]);
