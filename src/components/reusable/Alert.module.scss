@@ -1,0 +1,39 @@
+.alert_error {
+	background: rgba(206, 53, 53, 0.664);
+	font-family: 'Open Sans';
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 4rem;
+	animation: fadein 1s ease;
+	& p {
+		color: #fff;
+		font-family: 'Open Sans';
+	}
+}
+.alert_success {
+	background: rgba(52, 179, 52, 0.623);
+	font-family: 'Open Sans';
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 4rem;
+	animation: fadein 1s ease;
+	& p {
+		color: #fff;
+		font-family: 'Open Sans';
+	}
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

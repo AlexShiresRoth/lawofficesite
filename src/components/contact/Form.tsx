@@ -3,12 +3,14 @@ import formStyle from './Form.module.scss';
 import axios from 'axios';
 import { setRef } from '../../actions/refs';
 import { connect } from 'react-redux';
+import { handleConfirmationEmail } from '../../actions/email';
 
 interface FormProps {
 	setRef: (val: any) => any;
+	handleConfirmationEmail: (val: any) => any;
 }
 
-const Form = ({ setRef }: FormProps) => {
+const Form = ({ setRef, handleConfirmationEmail }: FormProps) => {
 	const [formData, sendFormData] = useState({
 		name: '',
 		email: '',
@@ -33,7 +35,7 @@ const Form = ({ setRef }: FormProps) => {
 
 	const formSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		console.log(formData);
+
 		setMsgStatus({
 			status: 'Sending...',
 			error: false,
@@ -59,6 +61,7 @@ const Form = ({ setRef }: FormProps) => {
 					loading: false,
 					success: true,
 				});
+				handleConfirmationEmail(formData);
 				setTimeout(() => {
 					sendFormData({
 						name: '',
@@ -199,4 +202,4 @@ const mapStateToProps = (state: any) => {
 	};
 };
 
-export default connect(mapStateToProps, { setRef })(Form);
+export default connect(mapStateToProps, { setRef, handleConfirmationEmail })(Form);

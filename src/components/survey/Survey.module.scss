@@ -51,6 +51,7 @@
 		& form {
 			display: flex;
 			flex-direction: column;
+			position: relative;
 			& .question_row {
 				padding: 2rem;
 				margin: 0.5rem 0;
@@ -73,21 +74,50 @@
 					height: 0;
 				}
 			}
-			& button {
-				background: $brand-main;
-				color: #fff;
-				border: 1px solid $brand-main;
-				height: 4rem;
-				width: 15rem;
-				align-self: flex-end;
+			& .container {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				justify-content: space-between;
 				margin: 1rem 0;
-				text-transform: uppercase;
-				box-shadow: 0px 1px 25px lighten($brand-main, 10%);
-				transition: all 0.3s ease;
-				&:hover {
-					cursor: pointer;
-					background: lighten($brand-main, 5%);
-					box-shadow: 0px 1px 10px lighten($brand-main, 5%);
+				& .row {
+					display: flex;
+					align-items: center;
+					width: 100%;
+					justify-content: space-between;
+					& .col {
+						display: flex;
+						flex-direction: column;
+
+						& label {
+							color: $brand-main;
+							font-family: 'Open Sans';
+							margin-bottom: 0.5rem;
+						}
+						& input {
+							height: 2.8rem;
+							width: 20rem;
+							padding: 0rem 1rem;
+							border-radius: 5px;
+							border: 3px solid #eee;
+						}
+					}
+					& button {
+						background: $brand-main;
+						color: #fff;
+						border: 1px solid $brand-main;
+						height: 4rem;
+						width: 15rem;
+						align-self: flex-end;
+						text-transform: uppercase;
+						box-shadow: 0px 1px 25px lighten($brand-main, 10%);
+						transition: all 0.3s ease;
+						&:hover {
+							cursor: pointer;
+							background: lighten($brand-main, 5%);
+							box-shadow: 0px 1px 10px lighten($brand-main, 5%);
+						}
+					}
 				}
 			}
 		}
@@ -132,6 +162,49 @@
 				background: $brand-alt;
 				color: #fff;
 				font-weight: 500;
+			}
+		}
+		& .survey {
+			& form {
+				display: flex;
+				flex-direction: column;
+				position: relative;
+				& .question_row {
+					padding: 2rem;
+					margin: 0.5rem 0;
+					box-shadow: 0 1px 10px #eee;
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					position: relative;
+					& label {
+						color: $brand-main;
+						font-family: 'Open Sans';
+						font-weight: 700;
+						margin-right: 0.5rem;
+						& span {
+							color: $brand-alt;
+						}
+					}
+					& input {
+						position: absolute;
+						height: 0;
+					}
+				}
+				& .container {
+					& .row {
+						& .col {
+							& input {
+								height: 2.8rem;
+								width: 15rem;
+							}
+						}
+						& button {
+							height: 3rem;
+							width: 12rem;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -180,6 +253,25 @@
 			& form {
 				& .question_row {
 					padding: 1rem;
+				}
+				& .container {
+					& .row {
+						flex-direction: column;
+						align-items: flex-start;
+						& .col {
+							margin: 0.5rem 0;
+							width: 100%;
+							& input {
+								width: 100%;
+								padding: 0;
+							}
+						}
+						& button {
+							margin: 1rem 0;
+							width: 100%;
+							align-self: flex-start;
+						}
+					}
 				}
 			}
 		}

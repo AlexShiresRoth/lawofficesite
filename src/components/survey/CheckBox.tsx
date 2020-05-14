@@ -11,9 +11,10 @@ interface CheckBoxProps {
 	removeCheck: (value: any) => any;
 	index: number;
 	current: number;
+	success: boolean;
 }
 
-const CheckBox = ({ question, setCheckBoxes, removeCheck, index, current }: CheckBoxProps) => {
+const CheckBox = ({ question, setCheckBoxes, index, current, success }: CheckBoxProps) => {
 	const [checkbox, setChecked] = useState({
 		checked: false,
 		surveyQuestion: '',
@@ -33,7 +34,7 @@ const CheckBox = ({ question, setCheckBoxes, removeCheck, index, current }: Chec
 
 	useEffect(() => {
 		setChecked({ checked: false, surveyQuestion: '', number: 0 });
-	}, [current]);
+	}, [current, success]);
 
 	return (
 		<div className={checked ? boxStyle.checked : boxStyle.checkbox} onClick={(e) => handleCheckSelect(e)}>
