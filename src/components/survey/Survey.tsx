@@ -118,7 +118,7 @@ const Survey = ({ survey: { checkboxes }, clearCheckBoxes, handleConfirmationEma
 		}, 5000);
 
 		return () => clearInterval();
-	}, [success, clearCheckBoxes, current]);
+	}, [success, clearCheckBoxes]);
 
 	return (
 		<section className={surveyStyle.section}>
