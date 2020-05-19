@@ -22,7 +22,7 @@ const NegativeGrid = ({ history }: NegGridProps) => {
 
 	const boxes = [
 		{
-			title: 'Survey',
+			title: 'Go',
 			icon: <MdQuestionAnswer />,
 			par: `Fill out a quick questionnaire to help us understand your needs`,
 			link: '',
