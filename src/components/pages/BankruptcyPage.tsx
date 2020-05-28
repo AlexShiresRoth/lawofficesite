@@ -9,8 +9,15 @@ const BankruptcyPage = (props: any) => {
 			top: 0,
 		});
 	}, []);
+
+	const pageInfo = {
+		pageTitle: 'Bankruptcy',
+		path: 'bankruptcy',
+		description: 'Bankruptcy Law',
+	};
+
 	return (
-		<Layout>
+		<Layout pageInfo={pageInfo}>
 			<Nav />
 			<Bankruptcy />
 		</Layout>

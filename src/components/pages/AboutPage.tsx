@@ -11,8 +11,14 @@ const BankruptcyPage = (props: any) => {
 			});
 		}, 150);
 	}, []);
+
+	const pageInfo = {
+		pageTitle: 'About',
+		path: 'about',
+		description: 'About Rothenberg Law Offices, PLLC',
+	};
 	return (
-		<Layout>
+		<Layout pageInfo={pageInfo}>
 			<Nav />
 			<About />
 		</Layout>

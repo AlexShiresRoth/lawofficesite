@@ -8,8 +8,14 @@ const EstatePlanningPage = (props: any) => {
 			top: 0,
 		});
 	}, []);
+
+	const pageInfo = {
+		pageTitle: 'Estate Planning',
+		path: 'estateplanning',
+		description: 'Estate Planning Law',
+	};
 	return (
-		<Layout>
+		<Layout pageInfo={pageInfo}>
 			<Nav />
 			<EstatePlanning />
 		</Layout>

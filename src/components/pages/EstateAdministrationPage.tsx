@@ -9,8 +9,15 @@ const EstateAdministrationPage = (props: any) => {
 			top: 0,
 		});
 	}, []);
+
+	const pageInfo = {
+		pageTitle: 'Estate Aministration',
+		path: 'estateadmin',
+		description: 'Estate Administration Law',
+	};
+
 	return (
-		<Layout>
+		<Layout pageInfo={pageInfo}>
 			<Nav />
 			<EstateAdministration />
 		</Layout>

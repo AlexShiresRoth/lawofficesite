@@ -9,8 +9,15 @@ const SurveyPage = (props: any) => {
 			top: 0,
 		});
 	}, []);
+
+	const pageInfo = {
+		pageTitle: 'Questionnaire',
+		path: 'questionnaire',
+		description: 'Brief user questionnaire',
+	};
+
 	return (
-		<Layout>
+		<Layout pageInfo={pageInfo}>
 			<Nav />
 			<Survey />
 		</Layout>

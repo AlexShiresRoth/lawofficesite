@@ -8,8 +8,15 @@ const Home = (props: any) => {
 			top: 0,
 		});
 	}, []);
+
+	const pageInfo = {
+		pageTitle: 'Home',
+		path: '',
+		description: 'Home page for Rothenberg Law Offices, PLLC',
+	};
+
 	return (
-		<Layout>
+		<Layout pageInfo={pageInfo}>
 			<Nav />
 			<Header />
 		</Layout>

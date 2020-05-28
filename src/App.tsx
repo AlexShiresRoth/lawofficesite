@@ -32,7 +32,7 @@ const App: React.FunctionComponent = () => {
 					<Route path="/estateandtrust" component={EstateAndTrustPage} />
 					<Route path="/bankruptcy" component={BankruptcyPage} />
 					<Route path="/about" component={AboutPage} />
-					<Route path="/survey" component={SurveyPage} />
+					<Route path="/questionnaire" component={SurveyPage} />
 				</Switch>
 			</Router>
 		</Provider>

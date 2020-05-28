@@ -9,8 +9,14 @@ const EstateAndTrustPage = (props: any) => {
 			top: 0,
 		});
 	}, []);
+
+	const pageInfo = {
+		pageTitle: 'Estate and Trust',
+		path: 'estateandtrust',
+		description: 'Estate and Trust Law',
+	};
 	return (
-		<Layout>
+		<Layout pageInfo={pageInfo}>
 			<Nav />
 			<EstateAndTrust />
 		</Layout>
