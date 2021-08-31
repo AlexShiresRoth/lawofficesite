@@ -31,12 +31,12 @@ const NegativeGrid = ({ history }: NegGridProps) => {
 		{
 			title: 'Call',
 			icon: <MdCall />,
-			par: `Call us today to get started!`,
+			par: `Call us to get started today!`,
 			link: 'tel:631-363-8749',
 			path: null,
 		},
 		{
-			title: 'Testimonials',
+			title: 'View',
 			icon: <FaQuoteLeft />,
 			par: `Check out our testimonials`,
 			link: '',
@@ -55,13 +55,13 @@ const NegativeGrid = ({ history }: NegGridProps) => {
 						{item.path !== null ? (
 							<NavLink to={item.path}>
 								<button>
-									{item.title} <MdKeyboardArrowRight />
+									{item.title} 
 								</button>
 							</NavLink>
 						) : (
 							<a href={item.link}>
 								<button>
-									{item.title} <MdKeyboardArrowRight />
+									{item.title} 
 								</button>
 							</a>
 						)}

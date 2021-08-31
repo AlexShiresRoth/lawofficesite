@@ -111,7 +111,8 @@ const Form = ({ setRef, handleConfirmationEmail }: FormProps) => {
 
 	return (
 		<section className={formStyle.section} ref={contactRef}>
-			<div className={formStyle.heading}>
+			<div className={formStyle.container}>
+				<div className={formStyle.heading}>
 				<h2>Send us a message and get started today.</h2>
 			</div>
 			<div
@@ -191,6 +192,7 @@ const Form = ({ setRef, handleConfirmationEmail }: FormProps) => {
 				<div className={formStyle.map_container}>
 					<iframe src={`https://snazzymaps.com/embed/200241`} title="map"></iframe>
 				</div>
+			</div>
 			</div>
 		</section>
 	);
