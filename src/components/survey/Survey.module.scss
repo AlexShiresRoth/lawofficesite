@@ -1,7 +1,7 @@
-@import '../../../sass/variables';
+@import "../../../sass/variables";
 @font-face {
-	font-family: 'Special';
-	src: url('../../fonts/wotfard.ttf');
+	font-family: "Special";
+	src: url("../../fonts/wotfard.ttf");
 }
 .section {
 	display: flex;
@@ -10,14 +10,14 @@
 	width: 100%;
 	height: 100%;
 	& .container {
-		width:85%;
-		display:flex;
+		width: 85%;
+		display: flex;
 		flex-direction: column;
 	}
 	& .heading {
 		margin-top: 8rem;
 		& h2 {
-			font-family: 'Special', sans-serif, serif;
+			font-family: "Special", sans-serif, serif;
 			font-weight: 100;
 			font-size: 2.5rem;
 			color: $brand-main;
@@ -60,15 +60,14 @@
 			position: relative;
 			& .question_row {
 				padding: 2rem;
-				margin: 0.5rem 0;
-				box-shadow: 0 1px 10px #eee;
+				border: 1px solid #eee;
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
 				position: relative;
 				& label {
 					color: $brand-main;
-					font-family: 'Open Sans';
+					font-family: "Open Sans";
 					font-weight: 700;
 					margin-right: 0.5rem;
 					& span {
@@ -97,15 +96,15 @@
 
 						& label {
 							color: $brand-main;
-							font-family: 'Open Sans';
+							font-family: "Open Sans";
 							margin-bottom: 0.5rem;
 						}
 						& input {
 							height: 2.8rem;
 							width: 20rem;
-							padding: 0rem 1rem;
 							border-radius: 5px;
 							border: 3px solid #eee;
+							text-indent: 10px;
 						}
 					}
 					& button {
@@ -117,6 +116,7 @@
 						align-self: flex-end;
 						text-transform: uppercase;
 						transition: all 0.3s ease;
+						border-radius: 60px;
 						&:hover {
 							cursor: pointer;
 							background: lighten($brand-main, 5%);
@@ -176,15 +176,13 @@
 				position: relative;
 				& .question_row {
 					padding: 2rem;
-					margin: 0.5rem 0;
-					box-shadow: 0 1px 10px #eee;
 					display: flex;
 					flex-direction: row;
 					justify-content: space-between;
 					position: relative;
 					& label {
 						color: $brand-main;
-						font-family: 'Open Sans';
+						font-family: "Open Sans";
 						font-weight: 700;
 						margin-right: 0.5rem;
 						& span {
@@ -216,7 +214,10 @@
 }
 @media screen and (max-width: 900px) {
 	.section {
-		width: 90vw;
+		width: 100%;
+		& .container {
+			width: 90%;
+		}
 		& .heading {
 			margin-top: 8rem;
 			& h2 {
@@ -228,9 +229,8 @@
 			background: #eee;
 			box-shadow: 0 1px 3px darken(#eee, 3%);
 			padding: 0.5rem;
-			display: grid;
-			grid-template-columns: 1fr;
-			grid-template-rows: auto;
+			display: flex;
+			flex-direction: column;
 			& button {
 				background: transparent;
 				border: 1px solid #fff;
@@ -257,14 +257,13 @@
 		& .survey {
 			& form {
 				& .question_row {
-					padding: 1rem;
+					padding: 2rem 1rem;
 				}
 				& .container {
 					& .row {
 						flex-direction: column;
 						align-items: flex-start;
 						& .col {
-							margin: 0.5rem 0;
 							width: 100%;
 							& input {
 								width: 100%;
