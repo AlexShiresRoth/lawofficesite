@@ -8,8 +8,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 4rem 2rem;
-	margin-bottom: 5rem;
+	padding: 4rem 2rem 0rem 2rem;
 	position: relative;
 	& .container {
 		display: flex;
@@ -131,18 +130,22 @@
 				}
 				& input {
 					padding: 1rem;
-					border: 1px solid #eee;
+					border: 2px solid #ddd;
 					font-family: "Montserrat";
+					border-radius: 3px;
 				}
 				& select {
 					padding: 1rem;
-					border: 1px solid #eee;
+					border: 2px solid #ddd;
+					font-family: "Montserrat";
+					border-radius: 3px;
 				}
 				& textarea {
 					min-height: 10rem;
 					padding: 1rem;
-					border: 1px solid #eee;
+					border: 2px solid #ddd;
 					font-family: "Montserrat";
+					border-radius: 3px;
 				}
 				& button {
 					padding: 0.4rem;

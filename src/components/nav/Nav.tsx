@@ -57,7 +57,7 @@ const Nav = ({ history, refs: { ref } }: NavProps) => {
       style={
         navBg
           ? { boxShadow: "0 1px 20px #22222233" }
-          : { boxShadow: "0 1px 0px #eeeeee00" }
+          : { boxShadow: "0 0px 0px 1px #eee" }
       }
     >
       <MobileNav services={servicesArr} />
