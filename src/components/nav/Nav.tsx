@@ -71,11 +71,12 @@ const Nav = ({ history, refs: { ref } }: NavProps) => {
           </NavLink>
         </div>
         <div className={navStyle.nav_right}>
-          <div className={navStyle.nav_col}>
-            <button
-              onMouseEnter={() => showMenu(true)}
-              onMouseLeave={() => showMenu(false)}
-            >
+          <div
+            className={navStyle.nav_col}
+            onMouseEnter={() => showMenu(true)}
+            onMouseLeave={() => showMenu(false)}
+          >
+            <button>
               {!isMenu ? (
                 <>
                   Services <MdArrowDropDown />

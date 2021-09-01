@@ -87,9 +87,31 @@
             top: 100%;
             right: 0;
             min-width: 14rem;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            box-shadow: 0 1px 10px #22222233;
+            border-radius: 10px;
+            box-shadow: 0 1px 10px #22222253;
+           
+            &::after {
+              content:"";
+              display:block;
+              position: absolute;
+              width: 0;
+              height: 0;
+              border-left: 15px solid transparent;
+              border-right: 15px solid transparent;
+              border-bottom: 15px solid #fff;
+              top:-5%;
+              right:10%;
+              z-index: 1;
+              border-radius:10px;
+            }
+            & .col:last-of-type{
+              border-bottom-left-radius: 10px;
+              border-bottom-right-radius: 10px;
+            }
+            & .col:first-of-type {
+              border-top-left-radius: 10px;
+              border-top-right-radius: 10px;
+            }
             & .col {
               display: flex;
               flex-direction: column;
@@ -99,6 +121,7 @@
               border-top: 1px solid #eee;
               transition: all 0.3s ease-in-out;
               overflow: hidden;
+              z-index:2;
               &:hover {
                 background-color: #eee;
               }
@@ -119,7 +142,7 @@
               & .icon {
                 color: $brand-alt;
                 width: 1.3rem;
-                margin-left:1rem;
+                margin-left: 1rem;
                 & svg {
                   stroke: $brand-alt;
                 }
@@ -166,7 +189,7 @@
 
 @media screen and (max-width: 900px) {
   .navigation {
-    height:4.8rem;
+    height: 4.8rem;
     & .nav_container {
       display: none;
     }
@@ -233,7 +256,7 @@
           flex-direction: row;
           align-items: center;
           max-width: 5rem;
-          height:100%;
+          height: 100%;
           padding: 1rem;
           background: $brand-accent;
           clip-path: polygon(100% 0, 100% 84%, 50% 99%, 0 84%, 0 0);
