@@ -1,33 +1,59 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useMemo, useCallback } from "react";
 import formStyle from "./Form.module.scss";
 import axios from "axios";
 import { setRef } from "../../actions/refs";
 import { connect } from "react-redux";
 import { handleConfirmationEmail } from "../../actions/email";
+import ReCaptcha from "../reusable/ReCaptcha";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 interface FormProps {
-  setRef: (val: any) => any;
-  handleConfirmationEmail: (val: any) => any;
+  setRef: (val: React.RefObject<string>) => void;
+  handleConfirmationEmail: (args: FormData) => void;
+}
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+  subject: string;
+}
+
+interface Message {
+  status: string;
+  error: boolean;
+  loading: boolean;
+  success: boolean;
 }
 
 const Form = ({ setRef, handleConfirmationEmail }: FormProps) => {
-  const [formData, sendFormData] = useState({
+  //types seem wrong for this
+  const executeRecaptcha: any = useGoogleReCaptcha();
+
+  const [formData, sendFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
     subject: "Bankruptcy",
   });
 
-  const [msgStatus, setMsgStatus] = useState({
+  const [msgStatus, setMsgStatus] = useState<Message>({
     status: "",
     error: false,
     loading: false,
     success: false,
   });
 
+  const [captchaIsLoaded, loadCaptcha] = useState<boolean>(false);
+
   const { name, email, message, subject } = formData;
 
   const contactRef = useRef(null);
+
+  const handleLoadCaptcha = (event: React.FormEvent, val: boolean) => {
+    event.preventDefault();
+    loadCaptcha(val);
+  };
 
   const onChange = (
     e:
@@ -40,9 +66,8 @@ const Form = ({ setRef, handleConfirmationEmail }: FormProps) => {
       [e.currentTarget.name]: e.currentTarget.value,
     });
 
-  const formSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const formSubmit = useCallback(async () => {
+    console.log("sending", formData);
     setMsgStatus({
       status: "Sending...",
       error: false,
@@ -61,7 +86,6 @@ const Form = ({ setRef, handleConfirmationEmail }: FormProps) => {
       },
     })
       .then((res) => {
-        console.log(res);
         setMsgStatus({
           status:
             "Thank you, your message has been sent and someone will be contacting you soon.",
@@ -109,11 +133,31 @@ const Form = ({ setRef, handleConfirmationEmail }: FormProps) => {
           });
         }, 10000);
       });
-  };
+  }, [formData, handleConfirmationEmail]);
 
   const { status, error, success, loading } = msgStatus;
 
-  useEffect(() => {
+  const handleOnVerifyData = useCallback(async () => {
+    try {
+      if (!executeRecaptcha) {
+        console.log("Execute recaptcha not yet available");
+        return;
+      }
+
+      const token = await executeRecaptcha;
+
+      console.log("token?", token);
+      if (token) {
+        await formSubmit();
+        loadCaptcha(false);
+      }
+    } catch (error) {
+      console.log("captcha error", error);
+    }
+    // Do whatever you want with the token
+  }, [executeRecaptcha, formSubmit]);
+
+  useMemo(() => {
     setRef(contactRef);
   }, [contactRef, setRef]);
 
@@ -139,7 +183,7 @@ const Form = ({ setRef, handleConfirmationEmail }: FormProps) => {
           <p>{status}</p>
         </div>
         <div className={formStyle.grid}>
-          <form onSubmit={(e) => formSubmit(e)}>
+          <form onSubmit={(e) => handleLoadCaptcha(e, true)}>
             <div className={formStyle.input_row}>
               <label>Email</label>
               <input
@@ -176,9 +220,10 @@ const Form = ({ setRef, handleConfirmationEmail }: FormProps) => {
                 value={subject}
                 onChange={(e) => onChange(e)}
               >
-                <option defaultValue="true" value="Bankruptcy">
-                  Bankruptcy
+                <option defaultValue="true" value="">
+                  Please Select One
                 </option>
+                <option value="Bankruptcy">Bankruptcy</option>
                 <option value="Estate Planning">Estate Planning</option>
                 <option value="Estate & Trust Administration">
                   Estate & Trust Administration
@@ -190,7 +235,13 @@ const Form = ({ setRef, handleConfirmationEmail }: FormProps) => {
             </div>
 
             <div className={formStyle.input_row}>
-              <button onClick={(e) => formSubmit(e)}>Send</button>
+              {captchaIsLoaded ? (
+                <ReCaptcha callback={handleOnVerifyData} />
+              ) : (
+                <button onClick={(e) => handleLoadCaptcha(e, true)}>
+                  Send
+                </button>
+              )}
             </div>
           </form>
           <div className={formStyle.business}>

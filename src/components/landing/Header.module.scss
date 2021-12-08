@@ -56,7 +56,7 @@
 				font-family: "Main", sans-serif;
 				color: $brand-accent;
 				font-weight: 100;
-				font-size: 2.5rem;
+				font-size: 4rem;
 				margin: 0;
 				text-transform: uppercase;
 			}
@@ -80,11 +80,12 @@
 				color: #eee;
 				font-weight: 200;
 				font-size: 1.2rem;
-				line-height: 1;
+				line-height: 1.3;
 				margin: 1rem 0;
 				& svg {
 					fill: $brand-accent;
 					margin: 0 0.5rem;
+					font-size:1.3rem;
 				}
 			}
 			& button {
@@ -107,7 +108,7 @@
 		}
 		& .neg_grid {
 			display: grid;
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(2, minmax(300px, 350px));
 			grid-template-rows: repeat(2, 1fr);
 			gap: 3rem;
 			// transform: translate(-15%, 1rem);
